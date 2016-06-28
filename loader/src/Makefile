@@ -49,7 +49,7 @@ SRCS            := \
 	buffer_pool.cpp \
     buffer_pool_in.cpp \
     buffer_pool_out.cpp \
-
+	nds_batch_loader.cpp \
 
 OBJS             = $(subst .cpp,.o,$(SRCS))
 CFLAGS          := -Wall -Wno-deprecated-declarations -O0 -g -std=c++11 -fPIC
