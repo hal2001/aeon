@@ -108,7 +108,7 @@ shared_ptr<image::decoded> image::extractor::extract(const char* inbuf, int insi
     record to fill a transform_params structure which will have
 
     Spatial distortion params:
-    randomly sampled crop box (based on params->center, params->aspect_ratio, params->scale_pct, record size)
+    randomly sampled crop box (based on params->center, params->horizontal_distortion, params->scale_pct, record size)
     randomly determined flip (based on params->flip)
     randomly sampled rotation angle (based on params->angle)
 
@@ -169,7 +169,7 @@ image::param_factory::make_params(shared_ptr<const decoded> input)
     cv::Size2f in_size = input->get_image_size();
 
     float scale = _cfg.scale(_dre);
-    float horizontal_distortion = _cfg.aspect_ratio(_dre);
+    float horizontal_distortion = _cfg.horizontal_distortion(_dre);
     cv::Size2f out_shape(_cfg.width * horizontal_distortion, _cfg.height);
 
     cv::Size2f cropbox_size = cropbox_max_proportional(in_size, out_shape);

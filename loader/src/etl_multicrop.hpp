@@ -51,7 +51,7 @@ namespace nervana {
         std::uniform_real_distribution<float> scale{1.0f, 1.0f};
         std::uniform_int_distribution<int>    angle{0, 0};
         std::normal_distribution<float>       lighting{0.0f, 0.0f};
-        std::uniform_real_distribution<float> aspect_ratio{1.0f, 1.0f};
+        std::uniform_real_distribution<float> horizontal_distortion{1.0f, 1.0f};
         std::uniform_real_distribution<float> photometric{0.0f, 0.0f};
         std::uniform_real_distribution<float> crop_offset{0.5f, 0.5f};
         std::bernoulli_distribution           flip_distribution{0};
@@ -103,7 +103,7 @@ namespace nervana {
             ADD_DISTRIBUTION(scale, mode::OPTIONAL),
             ADD_DISTRIBUTION(angle, mode::OPTIONAL),
             ADD_DISTRIBUTION(lighting, mode::OPTIONAL),
-            ADD_DISTRIBUTION(aspect_ratio, mode::OPTIONAL),
+            ADD_DISTRIBUTION(horizontal_distortion, mode::OPTIONAL),
             ADD_DISTRIBUTION(photometric, mode::OPTIONAL),
             ADD_DISTRIBUTION(crop_offset, mode::OPTIONAL),
             ADD_SCALAR(flip, mode::OPTIONAL),

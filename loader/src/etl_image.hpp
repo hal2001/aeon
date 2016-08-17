@@ -84,7 +84,7 @@ namespace nervana {
         /** Adjust lighting */
         std::normal_distribution<float>       lighting{0.0f, 0.0f};
         /** Adjust aspect ratio */
-        std::uniform_real_distribution<float> aspect_ratio{1.0f, 1.0f};
+        std::uniform_real_distribution<float> horizontal_distortion{1.0f, 1.0f};
         /** Not sure what this guy does */
         std::uniform_real_distribution<float> photometric{0.0f, 0.0f};
         /** Not sure what this guy does */
@@ -102,7 +102,7 @@ namespace nervana {
             ADD_DISTRIBUTION(scale, mode::OPTIONAL),
             ADD_DISTRIBUTION(angle, mode::OPTIONAL),
             ADD_DISTRIBUTION(lighting, mode::OPTIONAL),
-            ADD_DISTRIBUTION(aspect_ratio, mode::OPTIONAL),
+            ADD_DISTRIBUTION(horizontal_distortion, mode::OPTIONAL),
             ADD_DISTRIBUTION(photometric, mode::OPTIONAL),
             ADD_SCALAR(flip_enable, mode::OPTIONAL),
             ADD_SCALAR(center, mode::OPTIONAL),
